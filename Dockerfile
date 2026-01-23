@@ -5,7 +5,8 @@ FROM nginx:alpine
 COPY . /usr/share/nginx/html/
 
 # Create a startup script that configures nginx to listen on the PORT environment variable
-RUN echo '#!/bin/sh\n\
+RUN mkdir -p /app && \
+    echo '#!/bin/sh\n\
 PORT=${PORT:-8080}\n\
 sed -i "s/listen 80;/listen $PORT;/" /etc/nginx/conf.d/default.conf\n\
 nginx -g "daemon off;"' > /app/entrypoint.sh && \
