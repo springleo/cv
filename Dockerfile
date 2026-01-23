@@ -1,19 +1,23 @@
-# Use nginx as the base image to serve static HTML
-FROM nginx:alpine
+# Use Python as the base image
+FROM python:3.11-slim
 
-# Copy the entire project to nginx's default serving directory
-COPY . /usr/share/nginx/html/
+# Set working directory
+WORKDIR /app
 
-# Create a startup script that configures nginx to listen on the PORT environment variable
-RUN mkdir -p /app && \
-    echo '#!/bin/sh\n\
-PORT=${PORT:-8080}\n\
-sed -i "s/listen 80;/listen $PORT;/" /etc/nginx/conf.d/default.conf\n\
-nginx -g "daemon off;"' > /app/entrypoint.sh && \
-    chmod +x /app/entrypoint.sh
+# Copy requirements first for better caching
+COPY requirements.txt .
+
+# Install Flask dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the entire project
+COPY . .
 
 # Expose the PORT (Cloud Run will use 8080 by default)
 EXPOSE 8080
 
-# Set the startup script as entrypoint
-ENTRYPOINT ["/app/entrypoint.sh"]
+# Set environment variable for Flask
+ENV FLASK_APP=app.py
+
+# Run Flask app, listening on the PORT environment variable
+CMD ["python", "-u", "app.py"]
