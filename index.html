@@ -2,72 +2,298 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Manohar Mikkili</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manohar Mikkili - DevOps Engineer</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+      
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+      }
+      
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 40px;
+        border-bottom: 3px solid #667eea;
+        padding-bottom: 30px;
+      }
+      
+      .header img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #667eea;
+      }
+      
+      .header-content h1 {
+        color: #333;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+      
+      .header-content p {
+        color: #666;
+        font-size: 1.1em;
+      }
+      
+      .header-content em {
+        color: #667eea;
+        font-weight: bold;
+        font-style: normal;
+      }
+      
+      section {
+        margin-bottom: 40px;
+      }
+      
+      h2 {
+        color: #667eea;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+      }
+      
+      h3 {
+        color: #764ba2;
+        font-size: 1.3em;
+        margin-bottom: 15px;
+      }
+      
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      
+      table th, table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      
+      table th {
+        background: #f5f5f5;
+        font-weight: bold;
+        color: #667eea;
+      }
+      
+      table tr:hover {
+        background: #f9f9f9;
+      }
+      
+      ol, ul {
+        margin-left: 20px;
+        color: #555;
+      }
+      
+      li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+      
+      .contact-link {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-top: 10px;
+      }
+      
+      .cert-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.8em;
+        background: #f0f0f0;
+        margin-right: 10px;
+      }
+      
+      .cert-badge img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    </style>
   </head>
-  <body style="background-color: #B9EDDD;">
-    <table>
-      <tr>
-        <td><img src="images\profile.png" alt=""></td>
-        <td><h1>Manohar Mikkili</h1>
-        <p>DevOps engineer with more than</p><em> 16 yrs of experience</em>
-        </td>
-      </tr>
-    </table>
-    <h2>Work Experience</h2>
-    <table>
-      <tr>
-        <td><b>Dates</b></td>
-        <td><b>Work</b></td>
-      </tr>
-      <tr>
-        <td>2010-2015</td>
-        <td>PTC Software</td>
-      </tr>
-      <tr>
-        <td>2015-2023</td>
-        <td>Avaya Inc</td>
-      </tr>
-    </table>
-    <h3>Skills</h3>
-    <table>
-      <td>
-        <tr>
-          <td>Unix Bash</td>
-          <td>⭐⭐⭐⭐⭐</td>
-        </tr>
-        <tr>
-          <td>Python</td>
-          <td>⭐⭐⭐⭐</td>
-        </tr>
-        <tr>
-          <td>PKI Certificate mgmt</td>
-          <td>⭐⭐⭐⭐</td>
-        </tr>
-      </td>
-
-      <td>
-        <tr>
-          <td>Docker</td>
-          <td>⭐⭐⭐⭐</td>
-        </tr>
-        <tr>
-          <td>Kubernetes</td>
-          <td>⭐⭐⭐⭐</td>
-        </tr>
-        <tr>
-          <td>Jenkins</td>
-          <td>⭐⭐⭐⭐</td>
-        </tr>
-
-      </td>
-    </table>
-    <h3>My Hobbies</h3>
-    <ol>
-      <li>Roller Blading</li>
-      <li>Oratory, Toastmasters</li>
-      <li>Automobile enthusiast</li>
-    </ol>
-    <h3>Contact</h3>
-    <a href="contact.html">Contact Me</a>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="images/profile.png" alt="Profile Picture">
+        <div class="header-content">
+          <h1>Manohar Mikkili</h1>
+          <p>DevSecOps Lead Consultant with more than two decades of IT experience in driving 
+digital transformation, process modernization, and enterprise-scale CI/CD 
+automation across hybrid and cloud environments. Expert in Kubernetes, GitHub 
+Actions, Terraform, and Azure DevOps, with a proven record of improving release 
+velocity, security posture, and cost efficiency. 
+ 
+Currently, leading a team of four DevOps engineers in a fast-paced banking 
+environment, driving modernization of legacy systems into automated, audit-ready 
+CI/CD pipelines using GitHub Actions and Liquibase. Partnered with cross-functional 
+and compliance teams to deliver secure, high-quality releases, reflecting the Middle 
+East’s focus on governance and delivery excellence. </p>
+        </div>
+      </div>
+      <section>
+        <h2>Projects</h2>
+        <a href="/projects" class="contact-link">View Projects</a>
+      </section>
+      <section>
+        <h2>Work Experience</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Company</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024-Till date</td>
+              <td>Optimum Infosystem</td>
+            </tr>
+            <tr>
+              <td>2015-2024</td>
+              <td>Avaya Inc</td>
+            </tr>
+            <tr>
+              <td>2012-2015</td>
+              <td>BMC Software</td>
+            </tr>
+            <tr>
+              <td>2010-2012</td>
+              <td>SunGard</td>
+            </tr>
+            <tr>
+              <td>2008-2010</td>
+              <td>PTC Software</td>
+            </tr>
+            <tr>
+              <td>2005-2008</td>
+              <td>Tech Mahindra Ltd</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </section>
+      
+      <section>
+        <h2>Skills</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Skill</th>
+              <th>Proficiency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Azure/AWS</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Kubernetes</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>PKI Certificate Management</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Docker</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Terraform</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Jenkins/GitHub/GitLab</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <section>
+        <h2>Certifications</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Badge</th>
+              <th>Certification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="cert-badge"><img src="images/ckad.png" alt="CKA Logo"></div></td>
+              <td>Certified Kubernetes Application Developer (CKAD)</td>
+            </tr>
+            <tr>
+              <td><div class="cert-badge"><img src="images/cks.png" alt="CKS Logo"></div></td>
+              <td>Certified Kubernetes Security Specialist (CKS)</td>
+            </tr>
+            <tr>
+              <td><div class="cert-badge"><img src="images/cka.png" alt="CKA Logo"></div></td>
+              <td>Certified Kubernetes Administrator (CKA)</td>
+            </tr>
+            <tr>
+              <td><div class="cert-badge"><img src="images/pmp.png" alt="PMP Logo"></div></td>
+              <td>Project Management Professional (PMP)</td>
+            </tr>
+            <tr>
+              <td><div class="cert-badge"><img src="images/itil.jpg" alt="ITIL Logo"></div></td>
+              <td>ITIL Foundation</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <section>
+        <h2>My Hobbies</h2>
+        <ol>
+          <li>Roller Blading</li>
+          <li>Oratory & Toastmasters</li>
+          <li>Automobile Enthusiast</li>
+        </ol>
+      </section>
+      
+      <section>
+        <h2>Contact</h2>
+        <a href="/contact" class="contact-link">Contact Me</a>
+      </section>
+    </div>
   </body>
 </html>

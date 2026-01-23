@@ -2,21 +2,199 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Contact Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Manohar Mikkili</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .container {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        width: 100%;
+        max-width: 500px;
+      }
+      
+      h1 {
+        color: #667eea;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 2em;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 500;
+      }
+      
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="date"] {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e0e0e0;
+        border-radius: 5px;
+        font-size: 1em;
+        transition: border-color 0.3s;
+        font-family: inherit;
+      }
+      
+      input[type="text"]:focus,
+      input[type="password"]:focus,
+      input[type="email"]:focus,
+      input[type="date"]:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+      
+      input[type="submit"] {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-top: 10px;
+      }
+      
+      input[type="submit"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      }
+      
+      input[type="submit"]:active {
+        transform: translateY(0);
+      }
+      
+      .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      
+      .back-link:hover {
+        color: #764ba2;
+      }
+      
+      .success-message {
+        background: #d4edda;
+        color: #155724;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border-left: 4px solid #28a745;
+      }
+      
+      .error-message {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border-left: 4px solid #f5222d;
+      }
+      
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+      }
+      
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      
+      .contact-icon {
+        font-size: 2.5em;
+        color: #667eea;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+        border-radius: 50%;
+      }
+      
+      .contact-details h2 {
+        color: #667eea;
+        margin-bottom: 5px;
+        font-size: 1.2em;
+      }
+      
+      .contact-details a {
+        color: #667eea;
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      
+      .contact-details a:hover {
+        color: #764ba2;
+      }
+    </style>
   </head>
   <body>
-    <h1>Contact Me</h1>
-  <form class="" action="mailto:mikkilimanohar@gmail.com?subject=feedback" method="post" enctype="text/plain">
-    <label for="">Your Name</label>
-    <input type="text" name="" value="">
-    <br>
-    <label for="">Password</label>
-    <input type="password" name="" value=""><br>
-    <label for="">Your Email</label>
-    <input type="email" name="" value=""><br>
-    <label for="">Date</label>
-    <input type="date" name="" value=""><br>
-    <input type="submit" name="" value="Submit">
-  </form>
+    <div class="container">
+      <h1>Contact Me</h1>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-details">
+            <h2>Email</h2>
+            <a href="mailto:mikkilimanohar@gmail.com">mikkilimanohar@gmail.com</a>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div class="contact-details">
+            <h2>Mobile</h2>
+            <a href="tel:+919881255051">+91 9881255051</a>
+          </div>
+        </div>
+      </div>
+      
+      <a href="/" class="back-link">← Back to Home</a>
+    </div>
   </body>
 </html>

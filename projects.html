@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Manohar Mikkili</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+      
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+      }
+      
+      h1 {
+        color: #667eea;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+      }
+      
+      .project-card {
+        background: #f9f9f9;
+        border-left: 4px solid #667eea;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        transition: box-shadow 0.3s;
+      }
+      
+      .project-card:hover {
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+      }
+      
+      .project-card h2 {
+        color: #667eea;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+      }
+      
+      .project-card p {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 10px;
+      }
+      
+      .project-points {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 5px;
+      }
+      
+      .project-card .tech {
+        color: #764ba2;
+        font-weight: bold;
+        font-size: 0.9em;
+      }
+      
+      .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      
+      .back-link:hover {
+        color: #764ba2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Projects</h1>
+      
+      <div class="project-card">
+        <h2>Finacle Core Banking Modernization (Dubai based Bank, 2025)</h2>
+        <div class="project-points">• Led the modernization of legacy build and deploy process of Finacle core and WMS banking system by implementing automated CI/CD pipelines using GitHub Actions and Liquibase for database migrations.</div>
+        <div class="project-points">• Pioneered the use of liquibase to apply DB patches, via automated CICD workflows that has provision of rollbacks too</div>
+        <div class="project-points">• Completed the project in time with quality thereby enabling the teams to eliminate manual build process and human errors.</div>
+        <div class="project-points">• Implemented the entire projects in alignment with Bank's governance and compliance requirements, thereby reducing risk and improving audit readiness.</div>
+        <div class="project-points">• Streamlined branching strategy and vendor alignment to ensure production and test environments are sane and process driven.</div>
+        <div class="tech">Technologies: Podman, trivy, Crane, GitHub Actions, Liquibase, ansible, json, JFROG, OCP</div>
+      </div>
+      
+      <div class="project-card">
+        <h2>Enterprise Data Platform - Azure Cloud Migration (Dubai based Bank, 2025)</h2>
+        <div class="project-points">• Led the development and deployment of an enterprise-grade data platform on Microsoft Azure using Infrastructure-as-Code principles with Terraform.</div>
+        <div class="project-points">• Secured approvals from multiple stakeholders and collaborated closely with Cloud Infrastructure team to provision required Azure resources.</div>
+        <div class="project-points">• Architected a scalable, production-ready platform supporting real-time analytics and batch processing workflows across hybrid cloud environments.</div>
+        <div class="project-points">• Delivered the project ahead of schedule while maintaining production-quality standards, ensuring high availability and disaster recovery capabilities.</div>
+        <div class="tech">Technologies: Azure, Terraform, Kubernetes, Jenkins, GitLab CI, Prometheus, ELK Stack, Python, Bash</div>
+      </div>
+      
+      <a href="/" class="back-link">← Back to Home</a>
+    </div>
+  </body>
+</html>
