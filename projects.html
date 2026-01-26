@@ -267,6 +267,33 @@
             <div class="tech">Technologies: Nginx, Rate Limiting, Bash scripting, DoS Attack Simulation, VIP configuration, HTTP security headers</div>
           </div>
         </div>
+
+        <div class="project-item">
+          <div class="project-header" onclick="toggleProject(this)">
+            <h2>Release Automation & Deployment Pipeline Modernization</h2>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="project-content">
+            <div class="project-points"><strong>Problem Statement:</strong></div>
+            <div class="project-points">• Development teams released software artifacts as automatically-generated archives from SVN containing heterogeneous file types (.scr, .jasper, .class, .sql, .jsp, etc.) requiring deployment across on-premises frontend, backend, and Oracle database servers.</div>
+            <div class="project-points">• Deployment instructions communicated via manual release notes created risk through human error, with no standardized mapping of file types to target destinations and deployment paths.</div>
+            <div class="project-points">• The entire process was time-consuming, error-prone, and lacked traceability across development, UAT, and production environments.</div>
+            
+            <div class="project-points"><strong>Design & Solutions:</strong></div>
+            <div class="project-points">• Migrated source code from SVN to GitHub and established an intelligent CI/CD pipeline capable of automatically deducing target server paths based on file type extensions.</div>
+            <div class="project-points">• Engineered a comprehensive mappings.json configuration file serving as a centralized dictionary defining deployment rules for all file types, eliminating manual documentation.</div>
+            <div class="project-points">• Automated the CI process to generate deployment artifacts containing only changed files' entries and corresponding source files, then published filtered packages to JFROG for downstream consumption.</div>
+            <div class="project-points">• Implemented CD workflows leveraging GitHub Actions on self-hosted runners with Ansible orchestration to extract JFROG artifacts, interpret deployment mappings, and distribute files to appropriate target servers and paths with atomic guarantees.</div>
+            <div class="project-points">• Provisioned on-demand restart workflows enabling automated service recovery across frontend and backend infrastructure without manual intervention.</div>
+            <div class="project-points">• Established organization-wide branching strategy and governance policies enforcing methodical promotion of deployment packages from development through UAT environments to production.</div>
+            
+            <div class="project-points"><strong>Resolution & Results:</strong></div>
+            <div class="project-points">• Achieved 50% improvement in deployment quality through elimination of manual errors and enforcement of standardized deployment procedures.</div>
+            <div class="project-points">• Realized 30% efficiency gain by automating deployment path deduction, artifact filtering, and service orchestration workflows.</div>
+            <div class="project-points">• Established comprehensive deployment traceability and audit trail through GitHub Actions logs and Ansible execution records.</div>
+            <div class="tech">Technologies: Podman, Trivy, Crane, OCP, Ansible, JFROG, GitHub Actions, Bash scripting, JSON configuration</div>
+          </div>
+        </div>
         
       </div>
       
