@@ -240,6 +240,34 @@
             <div class="tech">Technologies: Azure, Terraform, Kubernetes, Jenkins, GitLab CI, Prometheus, ELK Stack, Python, Bash</div>
           </div>
         </div>
+
+        <div class="project-item">
+          <div class="project-header" onclick="toggleProject(this)">
+            <h2>Utility Server Security Hardening - DoS Vulnerability Mitigation</h2>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="project-content">
+            <div class="project-points"><strong>Problem Statement:</strong></div>
+            <div class="project-points">• Utility Server's /PhoneBackup/ endpoint was vulnerable to Denial-of-Service (DoS) attacks via floods of PUT/GET requests, rendering the server unavailable.</div>
+            <div class="project-points">• Enterprise desk IP Phones could not authenticate themselves due to no password being saved in flat files.</div>
+            <div class="project-points">• Existing authentication via URL-embedded credentials was considered insecure per CEC standards.</div>
+            
+            <div class="project-points"><strong>Design & Solutions:</strong></div>
+            <div class="project-points">• Developed a multi-option patch binary with self-extracting archive supporting install, rollback, and status commands.</div>
+            <div class="project-points">• <strong>Option 1:</strong> Blocking PhoneBackup feature completely - suitable for setups with only SIP phones.</div>
+            <div class="project-points">• <strong>Option 2:</strong> IP/subnet whitelisting - restricts traffic from known sources, allowing genuine requests from enterprise IP ranges.</div>
+            <div class="project-points">• <strong>Option 3:</strong> Rate limiting via nginx configuration - throttles incoming request pace to prevent DoS while maintaining legitimate traffic.</div>
+            
+            <div class="project-points"><strong>Resolution & Results:</strong></div>
+            <div class="project-points">• Implemented rate limiting in nginx configuration, blocking ~67% of malicious PUT requests (340 out of 1000 succeeded).</div>
+            <div class="project-points">• Validated solution using Application Layer DoS attack simulator (slowhttptest) across multiple attack vectors: Slow Body, Slow Header, Slow Read, and Range tests.</div>
+            <div class="project-points">• Established comprehensive acceptance criteria with test procedures for blocking, whitelisting, and rate limiting options.</div>
+            <div class="project-points">• Delivered throttled traffic handling returning "503 Unavailable" for excessive requests while allowing legitimate traffic through.</div>
+            <div class="project-points">• Enabled customers and Business Partners to deploy security fixes via self-contained patch binary with rollback capabilities.</div>
+            <div class="tech">Technologies: Nginx, Rate Limiting, Bash scripting, DoS Attack Simulation, VIP configuration, HTTP security headers</div>
+          </div>
+        </div>
+        
       </div>
       
       <a href="/" class="back-link">← Back to Home</a>
