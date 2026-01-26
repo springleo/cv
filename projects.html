@@ -70,6 +70,66 @@
         font-size: 0.9em;
       }
       
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .project-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s;
+        user-select: none;
+      }
+      
+      .project-header:hover {
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        transform: translateY(-2px);
+      }
+      
+      .project-header h2 {
+        margin: 0;
+        color: white;
+        font-size: 1.3em;
+        border: none;
+        padding: 0;
+      }
+      
+      .toggle-icon {
+        font-size: 1.5em;
+        transition: transform 0.3s;
+      }
+      
+      .project-content {
+        background: #f9f9f9;
+        padding: 0;
+        border-left: 4px solid #667eea;
+        border-radius: 0 5px 5px 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      
+      .project-content.expanded {
+        max-height: 1000px;
+        transition: max-height 0.5s ease-in;
+        padding: 20px;
+      }
+      
+      .project-item {
+        border-radius: 5px;
+        margin-bottom: 0;
+        overflow: hidden;
+      }
+      
       .back-link {
         display: inline-block;
         margin-top: 20px;
@@ -151,26 +211,48 @@
     <div class="container">
       <h1>Projects</h1>
       
-      <div class="project-card">
-        <h2>Finacle Core Banking Modernization (Dubai based Bank, 2025)</h2>
-        <div class="project-points">• Led the modernization of legacy build and deploy process of Finacle core and WMS banking system by implementing automated CI/CD pipelines using GitHub Actions and Liquibase for database migrations.</div>
-        <div class="project-points">• Pioneered the use of liquibase to apply DB patches, via automated CICD workflows that has provision of rollbacks too</div>
-        <div class="project-points">• Completed the project in time with quality thereby enabling the teams to eliminate manual build process and human errors.</div>
-        <div class="project-points">• Implemented the entire projects in alignment with Bank's governance and compliance requirements, thereby reducing risk and improving audit readiness.</div>
-        <div class="project-points">• Streamlined branching strategy and vendor alignment to ensure production and test environments are sane and process driven.</div>
-        <div class="tech">Technologies: Podman, trivy, Crane, GitHub Actions, Liquibase, ansible, json, JFROG, OCP</div>
-      </div>
-      
-      <div class="project-card">
-        <h2>Enterprise Data Platform - Azure Cloud Migration (Dubai based Bank, 2025)</h2>
-        <div class="project-points">• Led the development and deployment of an enterprise-grade data platform on Microsoft Azure using Infrastructure-as-Code principles with Terraform.</div>
-        <div class="project-points">• Secured approvals from multiple stakeholders and collaborated closely with Cloud Infrastructure team to provision required Azure resources.</div>
-        <div class="project-points">• Architected a scalable, production-ready platform supporting real-time analytics and batch processing workflows across hybrid cloud environments.</div>
-        <div class="project-points">• Delivered the project ahead of schedule while maintaining production-quality standards, ensuring high availability and disaster recovery capabilities.</div>
-        <div class="tech">Technologies: Azure, Terraform, Kubernetes, Jenkins, GitLab CI, Prometheus, ELK Stack, Python, Bash</div>
+      <div class="projects-grid">
+        <div class="project-item">
+          <div class="project-header" onclick="toggleProject(this)">
+            <h2>Finacle Core Banking Modernization</h2>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="project-content">
+            <div class="project-points">• Led the modernization of legacy build and deploy process of Finacle core and WMS banking system by implementing automated CI/CD pipelines using GitHub Actions and Liquibase for database migrations.</div>
+            <div class="project-points">• Pioneered the use of liquibase to apply DB patches, via automated CICD workflows that has provision of rollbacks too</div>
+            <div class="project-points">• Completed the project in time with quality thereby enabling the teams to eliminate manual build process and human errors.</div>
+            <div class="project-points">• Implemented the entire projects in alignment with Bank's governance and compliance requirements, thereby reducing risk and improving audit readiness.</div>
+            <div class="project-points">• Streamlined branching strategy and vendor alignment to ensure production and test environments are sane and process driven.</div>
+            <div class="tech">Technologies: Podman, trivy, Crane, GitHub Actions, Liquibase, ansible, json, JFROG, OCP</div>
+          </div>
+        </div>
+        
+        <div class="project-item">
+          <div class="project-header" onclick="toggleProject(this)">
+            <h2>Enterprise Data Platform - Azure Cloud Migration</h2>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="project-content">
+            <div class="project-points">• Led the development and deployment of an enterprise-grade data platform on Microsoft Azure using Infrastructure-as-Code principles with Terraform.</div>
+            <div class="project-points">• Secured approvals from multiple stakeholders and collaborated closely with Cloud Infrastructure team to provision required Azure resources.</div>
+            <div class="project-points">• Architected a scalable, production-ready platform supporting real-time analytics and batch processing workflows across hybrid cloud environments.</div>
+            <div class="project-points">• Delivered the project ahead of schedule while maintaining production-quality standards, ensuring high availability and disaster recovery capabilities.</div>
+            <div class="tech">Technologies: Azure, Terraform, Kubernetes, Jenkins, GitLab CI, Prometheus, ELK Stack, Python, Bash</div>
+          </div>
+        </div>
       </div>
       
       <a href="/" class="back-link">← Back to Home</a>
     </div>
+    
+    <script>
+      function toggleProject(header) {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('.toggle-icon');
+        
+        content.classList.toggle('expanded');
+        icon.style.transform = content.classList.contains('expanded') ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    </script>
   </body>
 </html>
