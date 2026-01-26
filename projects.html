@@ -218,12 +218,25 @@
             <span class="toggle-icon">▼</span>
           </div>
           <div class="project-content">
-            <div class="project-points">• Led the modernization of legacy build and deploy process of Finacle core and WMS banking system by implementing automated CI/CD pipelines using GitHub Actions and Liquibase for database migrations.</div>
-            <div class="project-points">• Pioneered the use of liquibase to apply DB patches, via automated CICD workflows that has provision of rollbacks too</div>
-            <div class="project-points">• Completed the project in time with quality thereby enabling the teams to eliminate manual build process and human errors.</div>
-            <div class="project-points">• Implemented the entire projects in alignment with Bank's governance and compliance requirements, thereby reducing risk and improving audit readiness.</div>
-            <div class="project-points">• Streamlined branching strategy and vendor alignment to ensure production and test environments are sane and process driven.</div>
-            <div class="tech">Technologies: Podman, trivy, Crane, GitHub Actions, Liquibase, ansible, json, JFROG, OCP</div>
+            <div class="project-content">
+            <div class="project-points"><strong>Problem Statement:</strong></div>
+            <div class="project-points">• Development teams released software artifacts as automatically-generated archives from SVN containing heterogeneous file types (.scr, .jasper, .class, .sql, .jsp, etc.) requiring deployment across on-premises frontend, backend, and Oracle database servers.</div>
+            <div class="project-points">• Deployment instructions communicated via manual release notes created risk through human error, with no standardized mapping of file types to target destinations and deployment paths.</div>
+            <div class="project-points">• The entire process was time-consuming, error-prone, and lacked traceability across development, UAT, and production environments.</div>
+            
+            <div class="project-points"><strong>Design & Solutions:</strong></div>
+            <div class="project-points">• Migrated source code from SVN to GitHub and established an intelligent CI/CD pipeline capable of automatically deducing target server paths based on file type extensions.</div>
+            <div class="project-points">• Engineered a comprehensive mappings.json configuration file serving as a centralized dictionary defining deployment rules for all file types, eliminating manual documentation.</div>
+            <div class="project-points">• Automated the CI process to generate deployment artifacts containing only changed files' entries and corresponding source files, then published filtered packages to JFROG for downstream consumption.</div>
+            <div class="project-points">• Implemented CD workflows leveraging GitHub Actions on self-hosted runners with Ansible orchestration to extract JFROG artifacts, interpret deployment mappings, and distribute files to appropriate target servers and paths with atomic guarantees.</div>
+            <div class="project-points">• Provisioned on-demand restart workflows enabling automated service recovery across frontend and backend infrastructure without manual intervention.</div>
+            <div class="project-points">• Established organization-wide branching strategy and governance policies enforcing methodical promotion of deployment packages from development through UAT environments to production.</div>
+            
+            <div class="project-points"><strong>Resolution & Results:</strong></div>
+            <div class="project-points">• Achieved 50% improvement in deployment quality through elimination of manual errors and enforcement of standardized deployment procedures.</div>
+            <div class="project-points">• Realized 30% efficiency gain by automating deployment path deduction, artifact filtering, and service orchestration workflows.</div>
+            <div class="project-points">• Established comprehensive deployment traceability and audit trail through GitHub Actions logs and Ansible execution records.</div>
+            <div class="tech">Technologies: Podman, Trivy, Crane, OCP, Ansible, JFROG, GitHub Actions, Bash scripting, JSON configuration</div>
           </div>
         </div>
         
@@ -273,26 +286,7 @@
             <h2>Release Automation & Deployment Pipeline Modernization</h2>
             <span class="toggle-icon">▼</span>
           </div>
-          <div class="project-content">
-            <div class="project-points"><strong>Problem Statement:</strong></div>
-            <div class="project-points">• Development teams released software artifacts as automatically-generated archives from SVN containing heterogeneous file types (.scr, .jasper, .class, .sql, .jsp, etc.) requiring deployment across on-premises frontend, backend, and Oracle database servers.</div>
-            <div class="project-points">• Deployment instructions communicated via manual release notes created risk through human error, with no standardized mapping of file types to target destinations and deployment paths.</div>
-            <div class="project-points">• The entire process was time-consuming, error-prone, and lacked traceability across development, UAT, and production environments.</div>
-            
-            <div class="project-points"><strong>Design & Solutions:</strong></div>
-            <div class="project-points">• Migrated source code from SVN to GitHub and established an intelligent CI/CD pipeline capable of automatically deducing target server paths based on file type extensions.</div>
-            <div class="project-points">• Engineered a comprehensive mappings.json configuration file serving as a centralized dictionary defining deployment rules for all file types, eliminating manual documentation.</div>
-            <div class="project-points">• Automated the CI process to generate deployment artifacts containing only changed files' entries and corresponding source files, then published filtered packages to JFROG for downstream consumption.</div>
-            <div class="project-points">• Implemented CD workflows leveraging GitHub Actions on self-hosted runners with Ansible orchestration to extract JFROG artifacts, interpret deployment mappings, and distribute files to appropriate target servers and paths with atomic guarantees.</div>
-            <div class="project-points">• Provisioned on-demand restart workflows enabling automated service recovery across frontend and backend infrastructure without manual intervention.</div>
-            <div class="project-points">• Established organization-wide branching strategy and governance policies enforcing methodical promotion of deployment packages from development through UAT environments to production.</div>
-            
-            <div class="project-points"><strong>Resolution & Results:</strong></div>
-            <div class="project-points">• Achieved 50% improvement in deployment quality through elimination of manual errors and enforcement of standardized deployment procedures.</div>
-            <div class="project-points">• Realized 30% efficiency gain by automating deployment path deduction, artifact filtering, and service orchestration workflows.</div>
-            <div class="project-points">• Established comprehensive deployment traceability and audit trail through GitHub Actions logs and Ansible execution records.</div>
-            <div class="tech">Technologies: Podman, Trivy, Crane, OCP, Ansible, JFROG, GitHub Actions, Bash scripting, JSON configuration</div>
-          </div>
+          
         </div>
         
       </div>
