@@ -16,10 +16,20 @@ def index():
 def contact():
     return render_template('contact.html')
 
-# Serve projects page
+# Serve projects root -> redirect to work projects
 @app.route('/projects')
 def projects():
+    return redirect(url_for('projects_work'))
+
+# Serve work projects page
+@app.route('/projects/work')
+def projects_work():
     return render_template('projects.html')
+
+# Serve outside-work projects page
+@app.route('/projects/outside')
+def projects_outside():
+    return render_template('outside-work.html')
 
 # Handle contact form submission
 @app.route('/send-message', methods=['POST'])
