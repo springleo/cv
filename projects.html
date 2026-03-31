@@ -214,6 +214,36 @@
       <div class="projects-grid">
         <div class="project-item">
           <div class="project-header" onclick="toggleProject(this)">
+            <h2>Workload Migration from me-central-1 to eu-west-1 (At RAK Bank)</h2>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="project-content">
+            <div class="project-points"><strong>Problem Statement:</strong></div>
+            <div class="project-points">• Due to unforeseen fallout of geopolitical tensions, the bank needed to migrate its workloads from the me-central-1 region to the more stable eu-west-1 region.</div>
+            <div class="project-points">• Two out of three availability zones in the me-central-1 region were affected, leading to service disruptions.</div>
+            <div class="project-points">• The production environment was at risk of complete outage due to the loss of critical infrastructure.</div>
+            
+            <div class="project-points"><strong>The Ask:</strong></div>
+            <div class="project-points">• DevOps Team was asked to quickly migrate all workloads to the eu-west-1 region with minimal downtime and data loss. This was quite challending since the entire infra and application dependencies needed to be provisioned ground up.</div>
+            
+            <div class="project-points"><strong>Action plan and implementation:</strong></div>
+            <div class="project-points">• Provision the infra first, starting with basic AWS services like RDS, S3, S3 notification, SNS, ECR etc. Ensure the RDSsecurity group's CIDR range had correctly chosen VPC range to allow incoming connections emanating from within the VPC and also from on-prem hosted DBs.</div>
+            <div class="project-points">• Once done, get the DBA team to restore data into the recently provisioned RDS instance.</div>
+            <div class="project-points">• Provision the EKS, cluster-autoscaler/karpenter along with mandatory and optional addons.</div>
+            <div class="project-points">• Create the istio NLB and get the certificate's CN and SAN mapped with the DNS name of NLB.</div>
+            <div class="project-points"><strong>Technologies Used:</strong></div>
+            <div class="project-points">• AWS Services: RDS, S3, SNS, ECR, EKS, VPC, Security Groups</div>
+            <div class="project-points">• Kubernetes: Cluster Autoscaler, Karpenter, Istio, NLB</div>
+            <div class="project-points">• DevOps Tools: Terraform, GitHub Actions</div>
+            <div class="project-points"><strong>Challenges faced:</strong></div>
+            <div class="project-points">• Constant follow ups from stakeholders.</div>
+            <div class="project-points">• Terraform plan and apply failures when provisioning infra from scratch, due to unavailability of S3 endpoints, lack of VPC in shared-services account=> Route53=>Hosted Zones, incorrect/missing CIDR from whitelisted security groups.</div>
+            <div class="project-points">• Amending the workflows to allow the CD to run from newly provisioned github cloud runners in eu-west-1 region.</div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header" onclick="toggleProject(this)">
             <h2>Finacle Core Banking Modernization (At RAK Bank)</h2>
             <span class="toggle-icon">▼</span>
           </div>
