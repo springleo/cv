@@ -127,8 +127,9 @@
       
       .project-item {
         border-radius: 5px;
-        margin-bottom: 0;
+        margin-bottom: 32px;
         overflow: hidden;
+        background: none;
       }
       
       .back-link {
@@ -263,6 +264,45 @@
               <a href="https://github.com/reza-gholizade/k8s-mcp-server" title="k8s-mcp-server GitHub repository (reza-gholizade/k8s-mcp-server)" target="_blank" rel="noopener">k8s-mcp-server — GitHub repository</a><br>
               <a href="https://github.com/features/copilot/cli" title="GitHub Copilot CLI" target="_blank" rel="noopener">GitHub Copilot CLI</a>
             </div>
+          </div>
+
+          <div class="project-item">
+          <div class="project-header" onclick="toggleProject(this)">
+            <h2>Self Hosted portfolio like CV site (The one currently in use)</h2>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="project-content">
+            <div class="project-points"><strong>Why the need:</strong></div>
+            <div class="project-points">• I was looking for a one stop shop for my professional information.</div>
+            <div class="project-points">• Something that could showcase my skills and experience in a single location.</div>
+            <div class="project-points"><strong>Implementation Details:</strong></div>
+            <div class="project-points">• Python Flask application as backend</div>
+            <div class="project-points">• HTML/CSS as frontend</div>
+            <div class="project-points">• The project structure is as follows:</div>
+            <code style="background-color: black; color: white; padding: 10px; display: block; border-radius: 5px; overflow-x: auto;">.<br>
+            ├── app.py<br>
+            ├── contact.html<br>
+            ├── Dockerfile<br>
+            ├── docs<br>
+            │   └── assets<br>
+            ├── images<br>
+            │   ├── add-mcp.png<br>
+            │   ├── az900.png<br>
+            │   ├── ckad.png<br>
+            │   ├── cka.png<br>
+            │   ├── cks.png<br>
+            │   ├── cp1.jpg<br>
+            │   ├── itil.jpg<br>
+            │   ├── pmp.png<br>
+            │   └── profile.png<br>
+            ├── index.html<br>
+            ├── outside-work.html<br>
+            ├── projects.html<br>
+            ├── README.md<br>
+            └── requirements.txt<br></code>
+            <div class="project-points">• Build and run steps:</div>
+            <code style="background-color: black; color: white; padding: 10px; display: block; border-radius: 5px; overflow-x: auto;"># Build the Docker image<br>docker build -t manohar-portfolio .<br><br># Run the Docker container<br>docker run -d -p 8080:8080 manohar-portfolio</code>
+            <div class="project-points">• This will start the Flask application and make it accessible at http://localhost:8080. You can navigate to this URL in your web browser to view the portfolio site.</div>
           </div>
         </div>
         
